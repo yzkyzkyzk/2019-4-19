@@ -1,0 +1,113 @@
+<!DOCTYPE html><html><head><title>JS1</title><meta charset='utf-8'><link href='https://cdn.maxiang.io/res-min/themes/marxico.css' rel='stylesheet'><style>
+.note-content  {font-family: 'Helvetica Neue', Arial, 'Hiragino Sans GB', STHeiti, 'Microsoft YaHei', 'WenQuanYi Micro Hei', SimSun, Song, sans-serif;}
+
+</style></head><body><div id='preview-contents' class='note-content'>
+                        
+                    
+
+
+
+<h1 id="js1">JS1</h1>
+
+
+
+<h2 id="js组成">js组成</h2>
+
+<ul><li><p>javascript 编程语言</p>
+
+<ul>
+<li><p>ECMAScript 标准（语法）</p></li>
+<li><p>DOM Document object  model 文档对象模型</p></li>
+<li><p>BOM Browser  object model 浏览器对象模型</p></li></ul></li>
+<li><p>js的使用方式</p>
+
+<ul>
+<li><p>1.行内 <br>
+<code>&lt;button onclick="alert(1)"&gt;</code>点我<code>&lt;/button&gt;</code></p></li>
+<li><p>2.内嵌 <br>
+把script标签放在body结束标签上面</p></li>
+<li><p>3.外链</p></li></ul></li>
+</ul>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs applescript"><div class="hljs-line">&lt;<span class="hljs-keyword">script</span> src=<span class="hljs-string">"js路径"</span>&gt;&lt;/<span class="hljs-keyword">script</span>&gt; 
+</div><div class="hljs-line">    注意：使用src引入的<span class="hljs-keyword">script</span>是不能直接在元素内写js，写了也出不来。
+</div><div class="hljs-line">        注意:如果加了src，<span class="hljs-keyword">script</span>中不能执行js了。
+</div></code></pre>
+
+<ul><li><p>通过id的方式去获取元素 <br>
+语法: <br>
+<code>document.getElementById('id名')</code>。 <br>
+<code>onclick</code>  <strong>点击行为（事件）</strong> <br>
+把一个触发事件要做的事情放到function内</p>
+
+<blockquote>
+  <p>document.getElementById(‘id名’).onclick= function( ){ alert(‘哈哈’); }</p>
+</blockquote></li>
+<li><p>操作属性:</p>
+
+<ul>
+<li><p>obj.属性</p>
+
+<ul>
+<li><p>读操作: <br>
+console.log(obj.属性名)</p></li>
+<li><p>写操作: <br>
+obj.属性名 = 要设置的值</p></li></ul></li></ul></li>
+<li><p>要操作元素的样式:</p>
+
+<ul>
+<li><p>ele.style.某个样式 = ‘值’;</p></li>
+<li><p>ele.className 操作类名</p></li></ul></li>
+<li><p>要操作元素内容:</p>
+
+<ul>
+<li><p>input的内容: value <br>
+input.value = ‘哈哈’;</p></li></ul></li>
+<li><p>操作别的元素的内容:</p>
+
+<ul>
+<li><p><code>innerText</code>  <strong>操作文本</strong>  读操作，只能获得文本</p></li>
+<li><p><code>innerHTML</code>  <strong>操作结构</strong>  读操作，获取到某个元素下的所有内容（包括文本、标签）</p></li></ul></li>
+<li><p>变量(let var): <br>
+可变的量，把数据存储到自定义的名字中，为了复用，只要使用这个名字，就对应到等号后面的值 <br>
+let :</p>
+
+<ul>
+<li><p>语法  <code>let btn = document.getElementById('btn')</code>;</p></li>
+<li><p>声明变量的时候名字不能重复</p></li>
+<li><p>不能以数字开头</p></li>
+<li><p>名字不能用关键字</p></li></ul></li>
+<li><p>常量(const) <br>
+不可变的量，把数据存储到自定义的名字中，为了复用，只要使用这个名字，就对应到等号后面的值 <br>
+const:</p>
+
+<ul>
+<li><p>语法：<code>const bg = document.getElementById('bg')</code>; <br>
+声明变量的时候名字不能重复 <br>
+不能以数字开头 <br>
+名字不能用关键字 <br>
+<code>console.log('')</code>  <strong>打印日志</strong> <br>
+<code>console.dir('')</code>  <strong>打印详细信息日志</strong> <br>
+<code>alert('')</code>        <strong>调用浏览器的默认弹框</strong> <br>
+alert(”)   调用浏览器默认的弹框,还会阻塞下面的代码,还会自动调用数据的toString方法. <br>
+当alert的时候，输出的结果类型一定是字符串类型。</p></li></ul></li>
+<li><p>数据类型:</p>
+
+<ul>
+<li><p>6种，string(字符串)、number(数字)、boolean(布尔值)、 <br>
+null(空)、undefined(未定义)、object(对象)</p></li>
+<li><p><code>' '</code> 或者 <code>""</code> 是字符串</p></li></ul></li>
+</ul>
+
+<p><strong><code>所有html中的获取的内容信息都是字符串</code></strong></p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs dart"><div class="hljs-line"><span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'ID名'</span>);
+</div><div class="hljs-line"><span class="hljs-built_in">document</span>.getElementsByClassName(‘类名’);
+</div><div class="hljs-line"><span class="hljs-built_in">document</span>.getElementsByTagName(‘标签名’);
+</div><div class="hljs-line"><span class="hljs-built_in">document</span>.<span class="hljs-built_in">querySelector</span>( );  获取一个
+</div><div class="hljs-line"><span class="hljs-built_in">document</span>.<span class="hljs-built_in">querySelectorAll</span>( ); 获取所有的
+</div></code></pre></div></body></html>
